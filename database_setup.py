@@ -16,6 +16,16 @@ class User(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
     email = Column(String(250), nullable=False)
+    
+    @property
+    def serialize(self):
+        return{
+                'name':self.name,
+                'email':self.email,
+                'id':self.id,
+                
+                
+                }
 
 
 class Categories(Base):
@@ -45,7 +55,7 @@ class CategoryItem(Base):
     id = Column(Integer, primary_key=True)
     description = Column(String(250))
     categories_id = Column(Integer, ForeignKey('categories.id'))
-    categories = relationship(Categories, single_parent=True)
+    categories = relationship(Categories, single_parent=True,cascade="delete")
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)
 
