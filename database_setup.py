@@ -9,6 +9,9 @@ Base = declarative_base()
 
 
 class User(Base):
+    """
+    Registered user information is stored in db
+    """
     __tablename__ = 'user'
     id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
@@ -16,6 +19,9 @@ class User(Base):
 
 
 class Categories(Base):
+    """
+    Different categories are stored in the database
+    """
     __tablename__ = 'categories'
     id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
@@ -31,6 +37,9 @@ class Categories(Base):
 
 
 class CategoryItem(Base):
+    """
+    Items in the categories are stored in the databse
+    """
     __tablename__ = 'category_item'
     name = Column(String(80), nullable=False)
     id = Column(Integer, primary_key=True)
