@@ -1,0 +1,30 @@
+{% include "header.html" %}
+<h1 class="header">New Item</h1>
+<form action="{{url_for('newItem')}}"
+  method="POST">
+  <p>Name:</p>
+  <input type="text" size="30" name="name">
+  <p>description:</p>
+  <input type="text" size="30" name="description">
+  <p>Sport:</p>
+  <select name="categories_id">
+ <option value=1 >Football</option>
+    <option value=2 >Basketball</option>
+    <option value=3 >Baseball</option>
+    <option value=4 >Cricket</option>
+    <option value=5 >Tennis</option>
+    <option value=6 >Track and Field</option>
+    <option value=7 >Combat Sports</option>
+    <option value=8 >Water Sports</option>
+    <option value=9 >Hiking and Trekking</option>
+    <option value=10 >Quidditch</option>
+    <option value=11 >Gym and Fitness</option>
+  </select>
+  </br></br>
+  <input type="submit" value ="Create">
+  <a href = "{{url_for('showCatalog')}}"><button type="button">Cancel</button></a>
+  </br></br>
+</form>
+
+</body>
+</html>

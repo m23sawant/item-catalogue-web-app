@@ -1,0 +1,30 @@
+{% include "header.html" %}
+<h1 class="header">Edit Item Name</h1>
+<form action="{{url_for('editItem' ,categories_id=categories_id, items_id=items_id, item=editedItem)}}"
+  method="POST">
+  <p>Name:</p>
+  <input type="text" size="30" name="name" placeholder = '{{item.name}}'>
+  <p>Description:</p>
+  <input type="text" size="30"  name="description" placeholder = '{{item.description}}'>
+  <p>Sport:</p>
+  <select name="categories_id">
+    <option value=1 >Football</option>
+    <option value=2 >Basketball</option>
+    <option value=3 >Baseball</option>
+    <option value=4 >Cricket</option>
+    <option value=5 >Tennis</option>
+    <option value=6 >Track and Field</option>
+    <option value=7 >Combat Sports</option>
+    <option value=8 >Water Sports</option>
+    <option value=9 >Hiking and Trekking</option>
+    <option value=10 >Quidditch</option>
+    <option value=11 >Gym and Fitness</option>
+  </select>
+  </br></br>
+  <input type="submit" value ="Update">
+  <a href = "{{url_for('showItem',categories_id=categories_id, items_id=items_id)}}"><button type="button">Cancel</button></a>
+  </br></br>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+ <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles__.css') }}"> 
+  </head>
+  <body>
+  
+    <div class="inline login">
+      {%if 'username' not in session %}
+      <a class="button" href="{{url_for('showLogin')}}">Login </a>
+      {% else %}
+      <a class="button" href="{{url_for('disconnect')}}">Logout </a>
+      {% endif %}
+    </div>
+    <header>
+      <img class="logo" src="{{ url_for('static', filename='sportlogo.png') }}"
+        alt="the sports logo" height="60" width="230">
+      <h1 class="inline"><a href = "{{url_for('showCatalog')}}" style="color:black">
+        Sports Catalog Website</a>
+      </h1>
+    </header>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class="flash">
+      {% for message in messages %}
+      <h2>{{message}}</h2>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
