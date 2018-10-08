@@ -19,7 +19,9 @@ It is basically a RESTful web application using the Python framework Flask along
 3. Launch the Vagrant VM (`vagrant up`)
 4. Log into Vagrant VM (`vagrant ssh`)
 5. Navigate to `cd/vagrant`
-6. Setup application database using `python database_setup.py`
-7. Populate the database with data using`python sport_upload.py`
-8. Run application using `python project.py`
-9. Access the application locally using http://localhost:8000
+6. Add required categories in `categories.csv` file(Or use the existing categories).
+7. Add required items with category ID in `items.csv` file(Or use the existing items).
+8. Setup application database using `python database_setup.py`
+9. Populate the database with data using`python csv_data_upload.py`
+10. Run application using `python project.py`
+11. Access the application locally using http://localhost:8000
