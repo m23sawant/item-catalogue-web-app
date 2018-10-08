@@ -15,23 +15,24 @@ session.add(User1)
 session.commit()
 
 category_df = pd.read_csv('categories.csv')
-item_df=pd.read_csv('items.csv', error_bad_lines=False)
+item_df = pd.read_csv('items.csv', error_bad_lines=False)
 
 
+categories = category_df[['name', 'ID']]
+items = item_df[['name', 'description', 'Category ID']]
 
-categories=category_df[['name','ID']]
-items=item_df[['name','description','Category ID']]
 
-
-for index,category in categories.iterrows():
-    category_input=Categories(user_id=1,name=category['name']) 
+for index, category in categories.iterrows():
+    category_input = Categories(user_id=1, name=category['name'])
     session.add(category_input)
     session.commit()
-    
-    for index,item in items.iterrows():  
-        if(category['ID']==item['Category ID']):
-            item_input=CategoryItem(user_id=1,name=item['name'],description=item['description'],categories=category_input)
+
+    for index, item in items.iterrows():
+        if(category['ID'] == item['Category ID']):
+            item_input = CategoryItem(
+                user_id=1,
+                name=item['name'],
+                description=item['description'],
+                categories=category_input)
             session.add(item_input)
             session.commit()
-            
-            
