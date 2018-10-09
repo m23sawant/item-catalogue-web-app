@@ -4,17 +4,13 @@ This project is also connected to the [Full Stack Foundations](https://classroom
 
 ## About this project 
 The Item Catalog project consists of developing an application that provides a list of items within a variety of categories, as well as provide a user registration and authentication system.
+
 It is basically a RESTful web application using the Python framework Flask along with third-party OAuth authentication. It uses various HTTP methods which relate to CRUD (create, read, update and delete) operations on an SQL database.
 
-### Requirements
-- [Vagrant](https://www.vagrantup.com/)
-- [Udacity Vagrantfile](https://github.com/udacity/fullstack-nanodegree-vm)
-- [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+### Installation
 
-### Installing
-
-1. Install Vagrant & VirtualBox
-2. Clone the Udacity Vagrantfile
+1. Install [Vagrant](https://www.vagrantup.com/) & [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
+2. Clone the [Udacity Vagrantfile](https://github.com/udacity/fullstack-nanodegree-vm)
 3. Go to Vagrant directory and either clone this repo or download and place zip
 3. Launch the Vagrant VM (`vagrant up`)
 4. Log into Vagrant VM (`vagrant ssh`)
