@@ -36,3 +36,17 @@ for index, category in categories.iterrows():
                 categories=category_input)
             session.add(item_input)
             session.commit()
+'''
+for index, item in items.iterrows():
+    for index, category in categories.iterrows():
+        if(category['ID'] == item['Category ID']):
+            category_input = Categories(user_id=1, name=category['name'])
+            item_input = CategoryItem(
+                user_id=1,
+                name=item['name'],
+                description=item['description'],
+                categories=category_input)
+            session.add(category_input)
+            session.commit()
+            session.add(item__input)
+            session.commit()'''
