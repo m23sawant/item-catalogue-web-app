@@ -251,7 +251,7 @@ def newItem():
         if(all([request.form['name'],
                 request.form['description'],
                 request.form['categories_id'],
-                ['user_id']])):
+                login_session['user_id']])):
             newItem = CategoryItem(name=request.form['name'],
                                    description=request.form['description'],
                                    categories_id=request.form['categories_id'],
@@ -284,7 +284,7 @@ def showCategories(categories_id):
 @app.route('/catalog/<int:categories_id>/<int:items_id>')
 def showItem(categories_id, items_id):
     categories = session.query(Categories).filter_by(id=categories_id).one()
-    items = session.query(CategoryItem).filter_by(id=items_id).one()
+    items = session.query(CategoryItem).filter_by(id=items_id)
     if 'username' not in login_session \
             or items.user_id != login_session['user_id']:
         # make sure user is logged in and user is the creator
